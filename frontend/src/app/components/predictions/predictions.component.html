@@ -1,0 +1,38 @@
+<div class="d-flex">
+    <div class="col-4 input-form">
+        <form>
+            <div class="form-group">
+                <label for="genderSelect">Пол</label>
+                <select class="form-control" id="genderSelect" #gender>
+                  <option>Мужской</option>
+                  <option>Женский</option>
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="ageInput">Возраст</label>
+              <input type="number" class="form-control" id="ageInput" min="0" data-bind="value:ageInput" placeholder="Введите возраст" #age>
+            </div>
+            <div class="form-group">
+                <label for="vacationInput">Вакансия</label>
+                <input type="text" class="form-control" id="vacationInput" placeholder="Введите вакансию" #vacation>
+            </div>
+            <div class="form-group">
+                <label for="expectedInput">Ожидаемая з/п</label>
+                <input type="number" class="form-control" id="expectedInput" min="1" data-bind="value:expectedInput" placeholder="Введите з/п" #salary>
+            </div>
+            <div class="form-group">
+                <label for="YearInput">Год выпуска</label>
+                <input type="number" class="form-control" id="YearInput" min="0" data-bind="value:YearInput" placeholder="Введите год выпуска" #year>
+            </div>
+            <div class="form-group">
+                <label for="experienceInput">Опыт работы</label>
+                <input type="number" class="form-control" id="experienceInput" min="0" data-bind="value:experienceInput" placeholder="Введите опыт" #experience>
+            </div>
+            <button type="button" class="btn btn-primary" 
+                    (click)="GetPredict(gender.value, age.value, vacation.value, salary.value, year.value, experience.value)">Подсчет</button>
+        </form>
+    </div>
+    <div class="col-8 input-form">
+        <h4 class="output-predict" *ngIf="predict.Vacation!=''">Предсказанная зарплата: {{prediction.prediction[0]}} руб</h4>
+    </div>
+</div>

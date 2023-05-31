@@ -1,0 +1,38 @@
+<div class="d-flex">
+    <div class="col-4">
+        <div class="row stat-list">
+            <form class="autocomplete">
+                <mat-form-field class="autocomplete-full-width" appearance="fill">
+                  <mat-label>Локация</mat-label>
+                  <input type="text" placeholder="Ввод..." aria-label="Number" matInput 
+                  [formControl]="myControl" [matAutocomplete]="auto">
+                  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="ChangeLocation(option)">
+                      {{option}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+            </form>
+            <div class="col-9">
+                <p class="stat-list-item">Кол-во резюме</p>
+            </div>
+            <div class="col-3">
+                <p *ngIf="locationsStat.Name!=''">{{locationsStat.ResumeCount}}</p>
+            </div>
+            <div class="col-9">
+                <p>Средняя з/п</p>
+            </div>
+            <div class="col-3">
+                <p *ngIf="locationsStat.Name!=''">{{locationsStat.AverageSalary}}</p>
+            </div>
+            <div class="col-9">
+                <p>Процент из всех</p>
+            </div>
+            <div class="col-3">
+                <p *ngIf="locationsStat.Name!=''">{{locationsStat.Percent}} %</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+    </div>
+</div> 

@@ -1,0 +1,26 @@
+.col-header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    background-color: #E2E2E2;
+}
+
+.stat-list div {
+    border-bottom: 1px solid #E2E3E9;
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.stat-list {
+    border-right: 1px solid #E2E3E9;
+    padding-right: 0;
+}
+
+.chart {
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+}
+
+.dropdown {
+    margin-left: 0.7rem;
+}

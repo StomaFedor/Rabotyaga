@@ -1,0 +1,24 @@
+services:
+  api:
+    container_name: api
+    restart: unless-stopped
+    build:
+      context: umlaut
+  ml_model:
+    container_name: ml_model
+    restart: unless-stopped
+    build:
+     context: ml-model-deploy
+    ports:
+      - '8800:80'
+    depends_on:
+      - api
+  web:
+    container_name: web
+    restart: unless-stopped
+    build:
+     context: frontend
+    ports:
+      - '80:80'
+    depends_on:
+      - api

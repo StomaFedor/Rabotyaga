@@ -1,0 +1,19 @@
+.stat-list div {
+    border-bottom: 1px solid #E2E3E9;
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.stat-list {
+    border-right: 1px solid #E2E3E9;
+    padding-right: 0;
+}
+  
+.autocomplete-full-width {
+    width: 100%;
+}
+
+.autocomplete {
+    padding-right: 0;
+    width: 100%;
+}

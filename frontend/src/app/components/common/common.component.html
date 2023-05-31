@@ -1,0 +1,44 @@
+<div class="d-flex">
+    <div class="col-4">
+        <div class="row stat-list">
+            <h4 class="col-header">Общие данные</h4>
+            <div class="col-9">
+                <p class="stat-list-item">Кол-во резюме</p>
+            </div>
+            <div class="col-3">
+                <p class="text-break">{{commonStat.ResumeCount}}</p>
+            </div>
+            <div class="col-9">
+                <p>Средняя з/п</p>
+            </div>
+            <div class="col-3">
+                <p>{{commonStat.AverageSalary}}</p>
+            </div>
+            <div class="col-9">
+                <p>Средний возраст начала работы</p>
+            </div>
+            <div class="col-3">
+                <p>{{commonStat.StartYearAverage}}</p>
+            </div>
+            <div class="col-9">
+                <p>Средний год выпуска</p>
+            </div>
+            <div class="col-3">
+                <p>{{commonStat.GraduationYearAverage}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+        <mat-form-field class="dropdown">
+            <mat-label>Выберите график</mat-label>
+            <mat-select value="faculties">
+              <mat-option value="faculties" (click)="ChangeChart('faculties')">Факультеты</mat-option>
+              <mat-option value="specializations" (click)="ChangeChart('specializations')">Специализации</mat-option>
+              <mat-option value="locations" (click)="ChangeChart('locations')">Локации</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="chart">
+            <app-bar-chart [data]="listModel"></app-bar-chart>
+        </div>
+    </div>
+</div>
